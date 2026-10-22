@@ -11,10 +11,10 @@ clone_or_update() {
   local repo_url="$1"
   local target="$2"
   if [ -d "${target}/.git" ]; then
-    git -C "${target}" fetch --depth 1 origin
-    git -C "${target}" reset --hard origin/HEAD
+    git -C "${target}" fetch --depth 1 origin main
+    git -C "${target}" reset --hard FETCH_HEAD
   else
-    git clone --depth 1 "${repo_url}" "${target}"
+    git clone --depth 1 --branch main "${repo_url}" "${target}"
   fi
 }
 
