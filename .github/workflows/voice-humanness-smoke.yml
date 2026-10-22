@@ -1,0 +1,23 @@
+name: voice-humanness-smoke
+
+on:
+  push:
+    paths:
+      - "benchmarks/voice_humanness/**"
+      - "scripts/setup_voice_humanness.sh"
+      - ".github/workflows/voice-humanness-smoke.yml"
+  pull_request:
+    paths:
+      - "benchmarks/voice_humanness/**"
+      - "scripts/setup_voice_humanness.sh"
+      - ".github/workflows/voice-humanness-smoke.yml"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate manifest
+        run: python -m json.tool benchmarks/voice_humanness/manifest.json
+      - name: Check setup script syntax
+        run: bash -n scripts/setup_voice_humanness.sh

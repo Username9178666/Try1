@@ -1,0 +1,38 @@
+{
+  "purpose": "voice_humanness",
+  "updated": "2026-10-22",
+  "benchmarks": [
+    {
+      "id": "humanness-index",
+      "repo": "https://github.com/VapiAI/humanness-index.git",
+      "path": "third_party/voice_humanness/humanness-index",
+      "kind": "pairwise_humanness",
+      "license": "Apache-2.0 code; benchmark audio has separate restrictions"
+    },
+    {
+      "id": "hear",
+      "repo": "https://github.com/HEAR-6/HEAR.git",
+      "path": "third_party/voice_humanness/hear",
+      "kind": "acoustic_reasoning",
+      "license": "See upstream repository notices"
+    },
+    {
+      "id": "nvv-superbench",
+      "repo": "https://github.com/lmxue/NVV-SuperBench.git",
+      "path": "third_party/voice_humanness/nvv-superbench",
+      "kind": "llm_judge_naturalness_nvc",
+      "license": "See upstream repository"
+    },
+    {
+      "id": "humdial-fdbench",
+      "repo": "https://github.com/ASLP-lab/HumDial-FDBench.git",
+      "path": "third_party/voice_humanness/humdial-fdbench",
+      "kind": "full_duplex_dialogue",
+      "license": "Apache-2.0 code; dataset terms are separate"
+    }
+  ],
+  "rubrics": [
+    "https://github.com/FreedomIntelligence/ExpressiveSpeech/blob/main/Supplementary%20Material/Standardized%20protocols/expressiveness.md",
+    "https://github.com/xiaomi-research/tts-prism/blob/main/Scoring_Criteria.md"
+  ]
+}
